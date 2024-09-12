@@ -5,41 +5,48 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<!-- V2 module 9:
+    - ajout d'aria-label sur les boutons, recommandé pour l'accessibilité (best practice)
+    - éléments centrés sur la page
+    - ajout d'une valeur à chaque bouton pour utilisation dans l'eventlistener
+    - Ajout d'un pattern HTML pour l'input (autorisation de chiffres et des caractères *,/,+,-,.
+    -->
 <body>
     <h1>Calculatrice</h1>
-    <form>
-        <input type="text" id="textArea" pattern="[0-9*\/.+\-]+$" />
-        <table>
+    <form id="myform">
+        <input aria-label="Champ de texte pour les chiffres" type="text" id="textArea" pattern="[0-9*\/.+\-]+$" />
+        <table id="mytable">
             <tr>
                 <!-- Buttons de type="button" pour éviter la soumission du formulaire dès qu'on clique
                     sur un bouton. Autre workaround, mettre un bouton de type submit sur la touche "=" ?
                     Ou ne pas faire de form, directement commencer par la balise <table>"-->
-                <th><button type="button" value="7">7</button></th>
-                <th><button type="button" value="8">8</button></th>
-                <th><button type="button" value="9">9</button></th>
-                <th><button type="button" onclick="clear_input()">CLR</button></th>
-                <th><button type="button" onclick="goback()">BACK</button></th>
+
+                <th><button aria-label="Bouton 7" type="button" value="7">7</button></th>
+                <th><button aria-label="Bouton 8" type="button" value="8">8</button></th>
+                <th><button aria-label="Bouton 9" type="button" value="9">9</button></th>
+                <th><button aria-label="Bouton Clear" type="button" onclick="clear_input()">CLR</button></th>
+                <th><button aria-label="Bouton Retour" type="button" onclick="goback()">BACK</button></th>
             </tr>
             <tr>
-                <th><button type="button" value="4">4</button></th>
-                <th><button type="button" value="5">5</button></th>
-                <th><button type="button" value="6">6</button></th>
-                <th><button type="button" value="+">+</button></th>
-                <th><button type="button" value="-">-</button></th>
+                <th><button aria-label="Bouton 4" type="button" value="4">4</button></th>
+                <th><button aria-label="Bouton 5" type="button" value="5">5</button></th>
+                <th><button aria-label="Bouton 6" type="button" value="6">6</button></th>
+                <th><button aria-label="Bouton plus" type="button" value="+">+</button></th>
+                <th><button aria-label="Bouton moins" type="button" value="-">-</button></th>
             </tr>
             <tr>
-                <th><button type="button" value="1">1</button></th>
-                <th><button type="button" value="2">2</button></th>
-                <th><button type="button" value="3">3</button></th>
-                <th><button type="button" value="*">*</button></th>
-                <th><button type="button" value="/">/</button></th>
+                <th><button aria-label="Bouton 1" type="button" value="1">1</button></th>
+                <th><button aria-label="Bouton 2" type="button" value="2">2</button></th>
+                <th><button aria-label="Bouton 3" type="button" value="3">3</button></th>
+                <th><button aria-label="Bouton multiplication" type="button" value="*">*</button></th>
+                <th><button aria-label="Bouton division" type="button" value="/">/</button></th>
             </tr>
             <tr>
-                <th><button type="button" value="0">0</button></th>
-                <th><button type="button" value=".">.</button></th>
+                <th><button aria-label="Bouton 0" type="button" value="0">0</button></th>
+                <th><button aria-label="Bouton point" type="button" value=".">.</button></th>
                 <th></th>
                 <th></th>
-                <th><button type="button" value="=">=</button></th>
+                <th><button aria-label="Bouton egal" type="button" value="=">=</button></th>
             </tr>
         </table>
     </form>
