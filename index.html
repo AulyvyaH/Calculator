@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Calculatrice</h1>
+    <form>
+        <input type="text" id="textArea" pattern="[0-9*\/.+\-]+$" />
+        <table>
+            <tr>
+                <!-- Buttons de type="button" pour éviter la soumission du formulaire dès qu'on clique
+                    sur un bouton. Autre workaround, mettre un bouton de type submit sur la touche "=" ?
+                    Ou ne pas faire de form, directement commencer par la balise <table>"-->
+                <th><button type="button" value="7">7</button></th>
+                <th><button type="button" value="8">8</button></th>
+                <th><button type="button" value="9">9</button></th>
+                <th><button type="button" onclick="clear_input()">CLR</button></th>
+                <th><button type="button" onclick="goback()">BACK</button></th>
+            </tr>
+            <tr>
+                <th><button type="button" value="4">4</button></th>
+                <th><button type="button" value="5">5</button></th>
+                <th><button type="button" value="6">6</button></th>
+                <th><button type="button" value="+">+</button></th>
+                <th><button type="button" value="-">-</button></th>
+            </tr>
+            <tr>
+                <th><button type="button" value="1">1</button></th>
+                <th><button type="button" value="2">2</button></th>
+                <th><button type="button" value="3">3</button></th>
+                <th><button type="button" value="*">*</button></th>
+                <th><button type="button" value="/">/</button></th>
+            </tr>
+            <tr>
+                <th><button type="button" value="0">0</button></th>
+                <th><button type="button" value=".">.</button></th>
+                <th></th>
+                <th></th>
+                <th><button type="button" value="=">=</button></th>
+            </tr>
+        </table>
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>
